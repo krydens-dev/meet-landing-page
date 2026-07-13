@@ -1,0 +1,39 @@
+:root {
+    --font-red-hat: "Red Hat Display", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-red-hat);
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 5rem 0 5rem;
+}
+
+
+main {
+  counter-reset: section-number; /* start the counter at 0 */
+}
+
+.feature {
+  counter-increment: section-number; /* +1 each time this class appears */
+  position: relative;
+}
+
+.feature::before {
+  content: "0" counter(section-number); /* → "01", "02" */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #e0e0e0; /* light gray, decorative */
+  display: block;
+}
