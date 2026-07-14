@@ -109,19 +109,60 @@ body {
     gap: 1rem;
 }
 
-main {
-  counter-reset: section-number; /* start the counter at 0 */
-}
+/* Feature */
 
 .feature {
-  counter-increment: section-number; /* +1 each time this class appears */
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
-.feature::before {
-  content: "0" counter(section-number); /* → "01", "02" */
-  font-size: 3rem;
-  font-weight: 700;
-  color: #e0e0e0; /* light gray, decorative */
-  display: block;
+.feature__divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature__line {
+  border-left: 1px solid var(--slate-300);
+  height: 5rem;
+}
+
+.feature__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--slate-300);
+    border-radius: 999px;
+    color: var(--slate-600);
+    font-weight: 900;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.spacing {
+    padding: 2rem 2rem 4rem 2rem;
+}
+
+.feature__images {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 147px);
+    grid-template-rows: repeat(2, 147px);
+    gap: 1rem;
+}
+
+.feature__images img {
+    width: 147px;
+    height: 147px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.feature__text {
+    display: flex;
+    flex-direction: column;
 }
